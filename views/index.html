@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="css/diseño.css" media="all">
+  <title>ITO OAXACA</title>
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
+  <!-- imagenes 360 -->
+  <link rel="stylesheet" href="https://cdn.pannellum.org/2.4/pannellum.css"/>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.2/dialog-polyfill.min.js"></script>
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.2/dialog-polyfill.min.css">
+
+  <style>
+     #panorama {
+         width: 600px;
+         height: 400px;
+     }
+     </style>
+
+</head>
+
+<body>
+
+
+  <div id="map"></div>
+  <script type="text/javascript" src="js/map.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXTM8tcD_fVL09AEKUKhFyundS8el6C70&callback=initMap" async defer></script>
+
+  <!-- dialog para imagenes -->
+  <style>
+
+  </style>
+  <dialog id="dialog" class="mdl-dialog">
+    <h3 class="mdl-dialog__title">Imagen del lugar</h3>
+    <div class="mdl-dialog__content">
+
+
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button">Cerrar</button>
+    </div>
+  </dialog>
+
+</body>
+
+<script src="js/dialog360.js">
+</script>
+
+</html>
