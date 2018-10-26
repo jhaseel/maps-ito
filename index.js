@@ -15,8 +15,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.set('port',process.env.PORT | 3000);
-const PORT = process.env.PORT || 3000;
+app.set('port', (process.env.PORT || 5000))
 
 var conexion= mysql.createConnection({
 	host: 'otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
@@ -69,6 +68,8 @@ app.get('/departamentos',function(req,res){
 		res.json(rows);
 	});
 });
-app.listen(PORT ,function(){
-	console.log('servidor iniciado...en el puerto '+PORT);
-})
+
+
+app.listen(app.get('port'), function() {
+  console.log("Node app en puerto=> " + app.get('port'))
+});
