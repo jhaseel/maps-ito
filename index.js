@@ -7,6 +7,9 @@ app.set('view engine','html');
 app.use(express.static(__dirname+'/views'));
 app.use(morgan('dev') );
 
+//static files
+app.use(express.static(__dirname + '/public'));
+
 app.use(function(req, res, next) {
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
@@ -15,7 +18,8 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.set('port', (process.env.PORT || 5000))
+app.set('port',process.env.PORT | 3000);
+const PORT = process.env.PORT || 3000;
 
 var conexion= mysql.createConnection({
 	host: 'otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
@@ -68,8 +72,6 @@ app.get('/departamentos',function(req,res){
 		res.json(rows);
 	});
 });
-
-
-app.listen(app.get('port'), function() {
-  console.log("Node app en puerto=> " + app.get('port'))
-});
+app.listen(PORT ,function(){
+	console.log('servidor iniciado...en el puerto '+PORT);
+})

@@ -7,18 +7,18 @@
   <meta name="viewport" content="initial-scale=1.0">
   <meta charset="utf-8">
   <!-- imagenes 360 -->
-  <link rel="stylesheet" href="https://cdn.pannellum.org/2.4/pannellum.css"/>
+<script src="https://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.2/dialog-polyfill.min.js"></script>
-  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.2/dialog-polyfill.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
   <style>
-     #panorama {
+     #dialog {
          width: 600px;
-         height: 400px;
+     }
+     #mdl-dialog__content{
+       height: 400px !important;
      }
      </style>
 
@@ -38,11 +38,10 @@
   <dialog id="dialog" class="mdl-dialog">
     <h3 class="mdl-dialog__title">Imagen del lugar</h3>
     <div class="mdl-dialog__content">
-
-
+        <div id="vrview"></div>
     </div>
     <div class="mdl-dialog__actions">
-      <button type="button" class="mdl-button">Cerrar</button>
+      <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Cerrar</button>
     </div>
   </dialog>
 

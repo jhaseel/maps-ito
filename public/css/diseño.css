@@ -1,0 +1,20 @@
+ #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+.mdl-card__title{
+  padding-bottom:0 !important;
+}0
+
+.edificios-card{
+  width: 100% !important;
+  height: 100% !important;
+}
+.mdl-card{
+  min-height: 150px !important;
+}
