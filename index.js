@@ -18,8 +18,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.set('port',process.env.PORT | 3000);
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 80;
 
 var conexion= mysql.createConnection({
 	host: 'otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',

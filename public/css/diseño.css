@@ -1,20 +1,57 @@
- #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-.mdl-card__title{
-  padding-bottom:0 !important;
-}0
+#map {
+  height: 100%;
+}
 
-.edificios-card{
+/* Optional: Makes the sample page fill the window. */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.mdl-card__title {
+  padding-bottom: 0 !important;
+}
+
+.edificios-card {
   width: 100% !important;
   height: 100% !important;
 }
-.mdl-card{
+
+.mdl-card {
   min-height: 150px !important;
+}
+
+#dialog {
+  width: 600px;
+}
+
+#mdl-dialog__content {
+  height: 400px !important;
+}
+
+#panorama {
+  width: 550px;
+  height: 500px;
+}
+
+@media screen and (max-width: 700px) {
+  #panorama {
+    width: 350px;
+    height: 300px;
+  }
+  #dialog {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #panorama {
+    width: 250px;
+    height: 200px;
+  }
+  #dialog {
+    width: 300px;
+  }
 }

@@ -1,5 +1,5 @@
 function hacer(imagen) {
- onVrViewLoad();
+ onVrViewLoad(imagen);
   var dialog = document.querySelector('#dialog');
   if (!dialog.showModal) {
     dialogPolyfill.registerDialog(dialog);
@@ -11,12 +11,14 @@ function hacer(imagen) {
 
 }
 
-function onVrViewLoad() {
-  document.getElementById('vrview').innerHTML = "";
-  var vrView = new VRView.Player('#vrview', {
-    image: 'https://image.ibb.co/d2gM1V/1a.png',
-    is_stereo: true,
-    width: "500px",
-    height:"500px"
-  });
+function onVrViewLoad(imagen) {
+  let link = (imagen!=null)?imagen :  "https://image.ibb.co/d2gM1V/1a.png";
+  document.getElementById('panorama').innerHTML ="";
+
+  pannellum.viewer('panorama', {
+    "type": "equirectangular",
+    "panorama": link,
+     "autoLoad": true,
+      "autoRotate": -2
+});
 }
