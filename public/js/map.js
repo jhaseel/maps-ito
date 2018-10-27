@@ -4,14 +4,17 @@ var infoEdif = [];
 var infoE = [];
 var edificios = [];
 var marcadores = [];
+var limitZoom=17;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {
       lat: 17.0793795,
       lng: -96.7443765
     },
-    zoom: 18
+     minZoom:limitZoom,
+    zoom: limitZoom
   });
+
   llenaredificios();
   departamentos();
 }

@@ -1,15 +1,19 @@
 var express= require('express');
-var app=express();
+const path = require('path');
 var mysql= require('mysql');
+const myconnection = require('express-myconnection');
 const morgan = require('morgan');
+var app=express();
+app.use(morgan('dev'));
 
+const PORT = process.env.PORT || 80;
+//view
 app.set('view engine','html');
 app.use(express.static(__dirname+'/views'));
-app.use(morgan('dev') );
-
 //static files
 app.use(express.static(__dirname + '/public'));
 
+//CORS
 app.use(function(req, res, next) {
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
@@ -18,59 +22,21 @@ app.use(function(req, res, next) {
   next();
 });
 
-const PORT = process.env.PORT || 80;
-
-var conexion= mysql.createConnection({
+//DB
+app.use(myconnection(mysql, {
 	host: 'otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
 	user: 's0mmrbn8q8nm0qfq',
 	password: 'uq7q3arhjra3zlzh',
 	port: '3306',
 	database: 'lbx8nyoc59rucalo'
-});
-
-conexion.connect();
+}, 'single' ));
 
 
-app.get('/',function(req,res){
-	res.render(__dirname+'index.html');
-});
+//routes
+const customerRouters = require('./routes/routes');
+app.use('/', customerRouters);
 
-app.get('/edificios',function(req,res){
-	conexion.query("SELECT * FROM edificios",function(err,rows,fields){
-		if (err) {
-			res.send("error!!!");
-			return;
-		}
-		res.json(rows);
-	});
 
-});
-
-app.get('/imagenes/:ide',function(req,res){
-	conexion.query('SELECT * FROM edificios where idEdificios=?',req.params.ide,function(err,rows,fields){
-		if(err) {
-			res.send("error en la consulta");
-			return;
-		}else{
-			if (rows.length>0) {
-				//res.json(rows);
-				res.render(__dirname+'imagen.html');
-			}
-		}
-		console.log(rows.length);
-		res.json(rows);
-	});
-});
-
-app.get('/departamentos',function(req,res){
-	conexion.query('SELECT * FROM departamento',function(err,rows,fields){
-		if (err) {
-			res.send("error!!!")
-			return;
-		}
-		res.json(rows);
-	});
-});
 app.listen(PORT ,function(){
 	console.log('servidor iniciado...en el puerto '+PORT);
 })
