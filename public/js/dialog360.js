@@ -17,6 +17,7 @@ function onVrViewLoad(imagen) {
 
   pannellum.viewer('panorama', {
     "type": "equirectangular",
-    "panorama": link
+    "panorama": link,
+     "autoLoad": true
 });
 }
