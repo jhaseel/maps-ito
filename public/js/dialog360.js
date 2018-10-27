@@ -12,7 +12,7 @@ function hacer(imagen) {
 }
 
 function onVrViewLoad(imagen) {
-  let link = (imagen!=null)?imagen :  "https://image.ibb.co/d2gM1V/1a.png";
+  let link = (imagen!='null')?imagen :  "https://image.ibb.co/d2gM1V/1a.png";
   document.getElementById('panorama').innerHTML ="";
 
   pannellum.viewer('panorama', {

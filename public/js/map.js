@@ -59,7 +59,7 @@ function mensajes(datos) {
     <div class="mdl-card__supporting-text">
       descripccion:  ${datos.descripccion} </div>
       <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="hacer" OnClick="hacer(${datos.imagen})">Visualizar</a>
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="hacer" OnClick="hacer('${datos.imagen}')">Visualizar</a>
   </div>
   </div>`;
 
@@ -138,7 +138,7 @@ function departamentos() {
         correo: ${depar[i].correo}
       </div>
       <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="hacer" OnClick="hacer(${depar[i].imagen})">Visualizar</a>
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="hacer" OnClick="hacer('${depar[i].imagen}')">Visualizar</a>
       </div>
     </div>`
     informacion.push(contentString);
