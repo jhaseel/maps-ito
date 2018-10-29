@@ -1,5 +1,5 @@
 # maps-ito Tecnologias Emergentes
  ## integrantes
- * Chavez Rosas Servando Esau
- * Hernandez Bolaños Alan Jhaseel
- * Lopez Cruz Eliel
+ * Chávez Rosas Servando Esaú
+ * Hernández Bolaños Alan Jhaseel
+ * López Cruz Eliel
